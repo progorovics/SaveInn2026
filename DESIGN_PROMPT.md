@@ -15,27 +15,44 @@ Static website for a car repair shop in Hamburg, Germany, built with Astro.
 - **Cookie consent popup required** - Must display on first visit, save user preference
 - Simple contact methods (phone, email) instead of complex forms
 
+## Branding
+- **Logo:** Reifenmeister logo (saved as `/public/logo.png`)
+- **Brand Colors:** Red (#D32F2F) and Blue (#0D47A1) from logo
+- **Color Philosophy:** Use logo colors strategically for professional appearance
+- **Logo Placement:** Header (top-left), Footer (optional)
+
 ---
 
 ## Visual Design Specifications
 
 ### Color Scheme
+**Based on Reifenmeister Logo (logo.png in /public)**
+
 ```
 Primary Colors:
 - Background: White (#FFFFFF)
 - Text: Black/Dark Gray (#000000, #333333)
 - Borders/Lines: Light Gray (#E5E5E5, #CCCCCC)
 
-Accent Color (Minimal Use):
-- To be determined based on shop branding
-- Use sparingly for CTAs and highlights
-- Suggest: Professional blue or automotive red if no branding exists
+Brand Colors (from logo):
+- Primary Red: #D32F2F (vibrant red from logo top section)
+- Primary Blue: #0D47A1 (strong blue from logo bottom section)
+- Alternative Red: #C62828 (slightly darker red for hover states)
+- Alternative Blue: #1565C0 (slightly lighter blue for accents)
+
+Color Usage Guidelines:
+- Red (#D32F2F): Primary CTA buttons, important highlights, active states
+- Blue (#0D47A1): Header elements, links, secondary CTAs, icons
+- Use red and blue strategically to maintain professional appearance
+- Don't overuse - keep white space dominant
+- Ensure sufficient contrast for accessibility (WCAG AA minimum)
 
 Approach:
+- White background foundation
+- Red and blue accents from logo
 - High contrast for readability
-- Black and white foundation
-- Minimal color usage
 - Professional and trustworthy aesthetic
+- Colors used sparingly for maximum impact
 ```
 
 ### Typography
@@ -71,18 +88,20 @@ Responsive Breakpoints:
 
 ### 1. Header (Sticky/Fixed)
 **Components:**
-- Logo (left-aligned)
+- Logo (left-aligned) - Reifenmeister logo from /public/logo.png
 - Navigation menu (center or right)
   - Home
   - Leistungen (Services)
-  - Über uns (About)
   - Kontakt (Contact)
 - Contact button/phone number (right, highlighted)
 
 **Design:**
 - White background
 - Subtle shadow or border-bottom
-- Mobile: Hamburger menu
+- Logo: Full color (red and blue)
+- Navigation links: Blue (#0D47A1) on hover
+- Contact button: Red background (#D32F2F) with white text
+- Mobile: Hamburger menu (blue icon)
 - Clean, minimal design
 
 ---
@@ -90,17 +109,20 @@ Responsive Breakpoints:
 ### 2. Hero Section
 **Components:**
 - Main headline (H1): Clear value proposition
-  - Example: "Ihre Werkstatt in Hamburg"
-  - Example: "Professionelle Autoreparatur & Service"
+  - Example: "SAVE INN - Ihre Werkstatt in Hamburg"
+  - Color: Dark gray or black with red accent on "SAVE INN"
 - Subtitle (P): Brief description of services/USP
-  - Example: "Zuverlässige Reparaturen, faire Preise, schneller Service"
-- Primary CTA button: "Jetzt anrufen" or "Kontakt aufnehmen" (NO booking system)
+  - Example: "Professionelle Autoreparatur & Service seit vielen Jahren"
+  - Color: Dark gray
+- Primary CTA button: "Jetzt anrufen" (NO booking system)
 - Optional: Secondary CTA: "Leistungen ansehen"
 
 **Design:**
 - Clean, spacious layout
 - Large, readable text
 - White or very light gray background
+- Primary CTA: Red background (#D32F2F), white text, hover: darker red (#C62828)
+- Secondary CTA (if used): Blue border (#0D47A1), blue text, hover: blue background
 - Optional: Subtle background image (workshop/car) with overlay
 - No animations or carousels in first draft
 
@@ -128,10 +150,11 @@ Each card contains:
 8. Karosserie & Lackierung
 
 **Design:**
-- Card: White background, subtle border or shadow
-- Icon: Black/dark gray, simple line icons
+- Card: White background, subtle gray border (#E5E5E5)
+- Icon: Blue (#0D47A1), simple line icons
+- Service title: Dark gray with blue (#0D47A1) on hover
 - Consistent padding and spacing
-- Hover effect: Subtle (optional border color change)
+- Hover effect: Blue border (#0D47A1) and subtle shadow
 - NO rotation, NO complex animations
 
 ---
@@ -153,14 +176,16 @@ Each card contains:
 - Heading: "Kontakt aufnehmen"
 - Subtext: "Rufen Sie uns an oder schreiben Sie uns eine E-Mail"
 - Contact options:
-  - Phone number (clickable tel: link)
-  - Email (clickable mailto: link)
+  - Phone number (clickable tel: link) - Blue color (#0D47A1)
+  - Email (clickable mailto: link) - Blue color (#0D47A1)
   - NO booking forms or scheduling system
 - Button: "Jetzt anrufen"
 
 **Design:**
 - Centered content
-- Light gray or white background
+- Light gray background (#F5F5F5) or white
+- CTA button: Red background (#D32F2F), white text
+- Links: Blue (#0D47A1) with underline on hover
 - Clear, prominent CTA button
 
 ---
@@ -193,6 +218,8 @@ Each card contains:
 **Design:**
 - Dark background (#1a1a1a or #2a2a2a)
 - Light text (#ffffff or #e5e5e5)
+- Links: Light gray, blue (#1565C0) on hover
+- Optional: Small logo in footer (grayscale or full color)
 - Mobile: Stacked columns
 - Desktop: 3-4 columns
 - Copyright notice at bottom center
@@ -224,8 +251,10 @@ Each card contains:
 - White content box, centered on screen
 - Max-width: 600px on desktop
 - Clean, readable typography
-- Buttons: Dark background with white text
-- Checkbox styling: Simple, accessible
+- Primary button "Alle akzeptieren": Red background (#D32F2F), white text
+- Secondary buttons: Dark gray background (#424242), white text
+- Links (Datenschutz, Impressum): Blue (#0D47A1)
+- Checkbox styling: Simple, accessible, blue accent (#0D47A1) when checked
 - Collapsible sections for cookie details (optional in first draft)
 
 **Technical Implementation:**

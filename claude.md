@@ -51,6 +51,16 @@
   - Cookie consent popup required (show once, save preference)
   - Contact via phone/email only (no booking forms)
 
+- **Branding & Design** (2026-01-10)
+  - Logo: Reifenmeister logo (saved as /public/logo.png)
+  - Brand colors from logo:
+    - Primary Red: #D32F2F (for CTAs, highlights)
+    - Primary Blue: #0D47A1 (for links, icons, accents)
+    - Alternative Red: #C62828 (hover states)
+    - Alternative Blue: #1565C0 (lighter accents)
+  - Color usage: Strategic, professional, not overused
+  - Maintains clean white background with colored accents
+
 ## Repository
 - **GitHub**: https://github.com/progorovics/SaveInn2026
 

@@ -6,6 +6,13 @@
 - **Business Name:** SAVE INN
 - **Owner/Responsible Person:** Felix Koch
 - **Location:** Hamburg-Harburg, Germany
+- **Logo:** Reifenmeister logo (saved as /public/logo.png)
+
+### Brand Colors (from logo)
+- **Primary Red:** #D32F2F (CTAs, important elements)
+- **Primary Blue:** #0D47A1 (links, icons, accents)
+- **Alternative Red:** #C62828 (hover states)
+- **Alternative Blue:** #1565C0 (lighter accents)
 
 ### Contact Information
 - **Address:** Küchgarten 21, 21073 Hamburg
