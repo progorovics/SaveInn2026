@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+---
+
+<Layout
+  title="Kontakt - SAVE INN Hamburg"
+  description="Kontaktieren Sie SAVE INN in Hamburg-Harburg. Telefon: 040-773192, E-Mail: info@save-inn.de, Küchgarten 21, 21073 Hamburg"
+>
+  <Header />
+  <main>
+    <section class="kontakt-hero">
+      <div class="container">
+        <h1>Kontakt</h1>
+        <p class="lead">Wir sind für Sie da - kontaktieren Sie uns</p>
+      </div>
+    </section>
+
+    <section class="kontakt-content">
+      <div class="container">
+        <div class="kontakt-grid">
+          <!-- Contact Information -->
+          <div class="kontakt-info">
+            <h2>SAVE INN</h2>
+            <p class="mb-lg"><strong>Inhaber: Felix Koch</strong></p>
+
+            <div class="info-section">
+              <h3>📍 Adresse</h3>
+              <p>
+                Küchgarten 21<br />
+                21073 Hamburg
+              </p>
+            </div>
+
+            <div class="info-section">
+              <h3>📞 Telefon & E-Mail</h3>
+              <p>
+                <strong>Telefon:</strong> <a href="tel:040773192">040-773192</a><br />
+                <strong>Fax:</strong> 040-7659918<br />
+                <strong>E-Mail:</strong> <a href="mailto:info@save-inn.de">info@save-inn.de</a>
+              </p>
+            </div>
+
+            <div class="info-section">
+              <h3>🕐 Öffnungszeiten</h3>
+              <p>
+                <strong>Montag - Freitag:</strong><br />
+                08:00 - 18:00 Uhr
+              </p>
+              <p class="mt-sm">
+                <strong>Hauptuntersuchung (HU):</strong><br />
+                Mittwoch & Donnerstag<br />
+                nach Terminvereinbarung
+              </p>
+            </div>
+
+            <div class="cta-buttons">
+              <a href="tel:040773192" class="btn btn-primary btn-large">
+                📞 Jetzt anrufen
+              </a>
+              <a href="mailto:info@save-inn.de" class="btn btn-secondary btn-large">
+                ✉️ E-Mail schreiben
+              </a>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="kontakt-map">
+            <div class="map-placeholder">
+              <p class="map-text">
+                <strong>Küchgarten 21, 21073 Hamburg</strong><br />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Küchgarten+21,+21073+Hamburg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="map-link"
+                >
+                  📍 In Google Maps öffnen
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <CookieConsent />
+</Layout>
+
+<style>
+  .kontakt-hero {
+    background: linear-gradient(135deg, var(--color-gray-lightest) 0%, var(--color-white) 100%);
+    padding: var(--spacing-xxl) 0 var(--spacing-xl);
+    text-align: center;
+  }
+
+  .kontakt-hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--color-gray-medium);
+  }
+
+  .kontakt-content {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .kontakt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl);
+    align-items: start;
+  }
+
+  .kontakt-info h2 {
+    color: var(--color-red-primary);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .info-section {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .info-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-dark);
+  }
+
+  .info-section p {
+    line-height: 1.8;
+    color: var(--color-gray-medium);
+  }
+
+  .info-section a {
+    color: var(--color-blue-primary);
+    font-weight: 600;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+  }
+
+  .kontakt-map {
+    position: sticky;
+    top: 100px;
+  }
+
+  .map-placeholder {
+    background-color: var(--color-gray-lightest);
+    border: 2px solid var(--color-gray-lighter);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xxl);
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-text {
+    font-size: 1.125rem;
+    color: var(--color-gray-dark);
+  }
+
+  .map-link {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-blue-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: background-color var(--transition-normal);
+  }
+
+  .map-link:hover {
+    background-color: var(--color-blue-light);
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .kontakt-hero h1 {
+      font-size: 2rem;
+    }
+
+    .kontakt-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .kontakt-map {
+      position: static;
+    }
+
+    .map-placeholder {
+      min-height: 300px;
+    }
+  }
+</style>

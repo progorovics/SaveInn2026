@@ -1,0 +1,104 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+const services = [
+  {
+    icon: '🔧',
+    title: 'Achsvermessung',
+    description: 'Professionelle Achsvermessung für optimalen Geradeauslauf und gleichmäßigen Reifenverschleiß'
+  },
+  {
+    icon: '🔍',
+    title: 'Fahrzeugdiagnose',
+    description: 'Moderne Diagnosegeräte für alle Fahrzeugmarken zur schnellen Fehlererkennung'
+  },
+  {
+    icon: '✅',
+    title: 'Inspektion',
+    description: 'Regelmäßige Inspektionen nach Herstellervorgaben für die Sicherheit Ihres Fahrzeugs'
+  },
+  {
+    icon: '❄️',
+    title: 'Klimaservice',
+    description: 'Wartung und Reparatur Ihrer Klimaanlage für angenehmes Fahren das ganze Jahr'
+  },
+  {
+    icon: '🛞',
+    title: 'Reifenservice',
+    description: 'Reifenwechsel, Einlagerung und Auswuchtung für sicheres Fahren'
+  },
+  {
+    icon: '🚗',
+    title: 'Unfallservice',
+    description: 'Professionelle Unfallreparaturen und Unterstützung bei der Schadensabwicklung'
+  },
+  {
+    icon: '🚚',
+    title: 'Anhängerreparatur',
+    description: 'Reparatur und Wartung von Anhängern aller Art'
+  },
+  {
+    icon: '📋',
+    title: 'TÜV & HU',
+    description: 'Hauptuntersuchung jeden Mittwoch und Donnerstag nach Terminvereinbarung'
+  }
+];
+---
+
+<section id="leistungen" class="services">
+  <div class="container">
+    <h2 class="services-title text-center">Unsere Serviceleistungen im Überblick</h2>
+    <p class="services-subtitle text-center">
+      Professionelle Werkstattleistungen für alle Fahrzeugmarken
+    </p>
+    <div class="services-grid">
+      {services.map(service => (
+        <ServiceCard
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-white);
+  }
+
+  .services-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .services-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-medium);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  @media (max-width: 768px) {
+    .services {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .services-title {
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "SAVE INN - Ihre zuverlässige Autowerkstatt in Hamburg-Harburg. Professioneller Service: Inspektion, Reparaturen, TÜV, Klimaservice, Reifenwechsel." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Autowerkstatt Hamburg, KFZ Werkstatt Harburg, Inspektion Hamburg, TÜV Hamburg, Reifenwechsel, Klimaservice, Achsvermessung, SAVE INN" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "SAVE INN",
+        "image": "https://www.save-inn-hamburg.de/logo.png",
+        "telephone": "040-773192",
+        "email": "info@save-inn.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Küchgarten 21",
+          "addressLocality": "Hamburg",
+          "postalCode": "21073",
+          "addressCountry": "DE"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      }
+    </script>
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
