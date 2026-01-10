@@ -24,6 +24,12 @@
 - Git repository initialized
 - GitHub repository created: https://github.com/progorovics/SaveInn2026
 - Initial commit pushed to GitHub
+- Analyzed reference website (mein-autozentrum.de)
+- Created comprehensive design brief and implementation prompt
+- **Feature decisions:** No appointment booking, cookie consent required
+- Collected all business information from current website
+- Updated contact email to info@save-inn.de
+- New responsible person: Felix Koch
 
 ## Decisions Made
 - **Tech Stack: Astro** (2026-01-10)
@@ -106,10 +112,38 @@
 - Clear call-to-action elements
 - Easy-to-find contact information
 
-## Questions to Address
-- What services does the repair shop offer?
-- Do you have branding materials (logo, colors, images)?
-- What languages should the site support (German only, or also English)?
-- Do you need online booking/contact forms?
-- Any specific features or pages needed?
-- Shop name and business details?
+## Business Information (Collected 2026-01-10)
+
+### Shop Details
+- **Name:** SAVE INN
+- **Previous Owner:** Dirk Eckermann
+- **New Owner:** Felix Koch (responsible person)
+- **Location:** Hamburg, Germany
+
+### Contact Information
+- **Address:** Küchgarten 21, 21073 Hamburg
+- **Phone:** 040-773192
+- **Fax:** 040-7659918
+- **Email:** info@save-inn.de (NEW - changed from saveinn-harburg@t-online.de)
+
+### Opening Hours
+- **Monday - Friday:** 08:00 - 18:00 Uhr
+- **Main Inspection (HU):** Wednesday & Thursday by appointment
+
+### Services Offered (Leistungen)
+1. **Achsvermessung** (Wheel Alignment)
+2. **Fahrzeugdiagnose** (Vehicle Diagnostics)
+3. **Inspektion** (Inspection)
+4. **Klimaservice** (Air Conditioning Service)
+5. **Reifenservice** (Tire Service)
+6. **Unfallservice** (Accident Service)
+7. **Anhängerreparatur** (Trailer Repair)
+
+Additional mentions:
+- Ölwechsel (Oil Changes)
+- Reparaturen (Repairs)
+- TÜV/HU (Main Inspection)
+
+### Website Details
+- **Current Website:** https://www.save-inn-hamburg.de/
+- **Language:** German only
