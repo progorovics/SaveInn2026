@@ -21,6 +21,9 @@
 - **Decision: Selected Astro framework**
 - Initialized Astro project with minimal template
 - Project structure created in workspace
+- Git repository initialized
+- GitHub repository created: https://github.com/progorovics/SaveInn2026
+- Initial commit pushed to GitHub
 
 ## Decisions Made
 - **Tech Stack: Astro** (2026-01-10)
@@ -31,12 +34,15 @@
   - Minimal JavaScript shipped to browser
   - Easy deployment options
 
+## Repository
+- **GitHub**: https://github.com/progorovics/SaveInn2026
+
 ## Next Steps
-- Set up Git repository and GitHub integration
 - Discuss website requirements and features
 - Plan site structure and pages
 - Gather content requirements (services, about, contact, etc.)
 - Design and implement website layout
+- Set up deployment (GitHub Pages, Netlify, or Vercel)
 
 ## Questions to Address
 - What services does the repair shop offer?
