@@ -10,6 +10,11 @@ Static website for a car repair shop in Hamburg, Germany, built with Astro.
 - Simple, straightforward user experience
 - No unnecessary animations or effects in first draft
 
+## Feature Requirements
+- **NO appointment booking system** - Contact via phone/email only
+- **Cookie consent popup required** - Must display on first visit, save user preference
+- Simple contact methods (phone, email) instead of complex forms
+
 ---
 
 ## Visual Design Specifications
@@ -89,7 +94,7 @@ Responsive Breakpoints:
   - Example: "Professionelle Autoreparatur & Service"
 - Subtitle (P): Brief description of services/USP
   - Example: "Zuverlässige Reparaturen, faire Preise, schneller Service"
-- Primary CTA button: "Termin vereinbaren"
+- Primary CTA button: "Jetzt anrufen" or "Kontakt aufnehmen" (NO booking system)
 - Optional: Secondary CTA: "Leistungen ansehen"
 
 **Design:**
@@ -145,13 +150,13 @@ Each card contains:
 
 ### 5. Contact/CTA Section
 **Components:**
-- Heading: "Termin vereinbaren"
-- Subtext: "Kontaktieren Sie uns für einen Termin"
+- Heading: "Kontakt aufnehmen"
+- Subtext: "Rufen Sie uns an oder schreiben Sie uns eine E-Mail"
 - Contact options:
   - Phone number (clickable tel: link)
   - Email (clickable mailto: link)
-  - Optional: Contact form
-- Button: "Jetzt anrufen" or "Kontaktformular"
+  - NO booking forms or scheduling system
+- Button: "Jetzt anrufen"
 
 **Design:**
 - Centered content
@@ -194,6 +199,54 @@ Each card contains:
 
 ---
 
+### 7. Cookie Consent Popup
+**Requirements:**
+- Display on first visit only
+- Save user preference in localStorage
+- Don't show again if user has made a choice
+
+**Components:**
+- Modal/overlay with centered content box
+- Heading: "Cookie Einstellungen"
+- Description text explaining cookie usage
+- Links to: "Datenschutzerklärung" and "Impressum"
+- Buttons:
+  - "Optionale Cookies ablehnen" (Decline optional)
+  - "Auswahl speichern" (Save selection)
+  - "Alle akzeptieren" (Accept all)
+- Cookie categories (checkboxes):
+  - **Essentiell** (Essential) - Always checked, disabled
+  - **Funktional** (Functional) - Optional checkbox
+  - **Statistik und Marketing** - Optional checkbox
+
+**Design (Based on Reference):**
+- Semi-transparent dark overlay background (rgba(0,0,0,0.7))
+- White content box, centered on screen
+- Max-width: 600px on desktop
+- Clean, readable typography
+- Buttons: Dark background with white text
+- Checkbox styling: Simple, accessible
+- Collapsible sections for cookie details (optional in first draft)
+
+**Technical Implementation:**
+- Use localStorage to save: `cookieConsent` object
+- Check on page load if consent already given
+- Minimal JavaScript (vanilla JS, no libraries needed)
+- Accessible (keyboard navigation, ARIA labels)
+
+**Example localStorage structure:**
+```json
+{
+  "hasConsented": true,
+  "essentiell": true,
+  "funktional": false,
+  "statistikMarketing": false,
+  "timestamp": "2026-01-10T18:00:00Z"
+}
+```
+
+---
+
 ## Technical Implementation Guidelines
 
 ### Astro Components Structure
@@ -205,13 +258,18 @@ src/
 │   ├── ServiceCard.astro
 │   ├── ServicesGrid.astro
 │   ├── CTASection.astro
+│   ├── CookieConsent.astro
 │   └── Footer.astro
 ├── layouts/
 │   └── Layout.astro
 ├── pages/
 │   ├── index.astro
 │   ├── leistungen.astro (optional separate page)
-│   └── kontakt.astro
+│   ├── kontakt.astro
+│   ├── impressum.astro (required for cookie popup link)
+│   └── datenschutz.astro (required for cookie popup link)
+├── scripts/
+│   └── cookieConsent.js (vanilla JavaScript)
 └── styles/
     └── global.css
 ```
@@ -247,8 +305,17 @@ Hero Subtitle: "Professionelle Autoreparatur & Service seit [Jahr]"
 
 Services Section Heading: "Unsere Serviceleistungen im Überblick"
 
-CTA Button Text: "Termin vereinbaren"
-CTA Section: "Kontaktieren Sie uns noch heute"
+CTA Button Text: "Jetzt anrufen" (NOT "Termin vereinbaren")
+CTA Section Heading: "Kontakt aufnehmen"
+CTA Section Subtext: "Rufen Sie uns an oder schreiben Sie uns eine E-Mail"
+
+Cookie Popup:
+- Heading: "Cookie Einstellungen"
+- Description: "Wir nutzen Cookies, um Ihnen die bestmögliche Nutzung unserer Webseite zu ermöglichen..."
+- Essential: "Essentiell"
+- Functional: "Funktional"
+- Stats/Marketing: "Statistik und Marketing"
+- Buttons: "Optionale Cookies ablehnen" | "Auswahl speichern" | "Alle akzeptieren"
 
 Footer Copyright: "© 2026 [Shop Name]. Alle Rechte vorbehalten."
 ```
@@ -261,7 +328,9 @@ Footer Copyright: "© 2026 [Shop Name]. Alle Rechte vorbehalten."
 - Create Layout.astro with Header and Footer
 - Build Hero section
 - Implement Services grid with placeholder content
-- Add basic CTA section
+- Add basic CTA section (phone/email, NO booking)
+- Implement Cookie Consent popup with localStorage
+- Create placeholder Impressum and Datenschutz pages
 - Basic responsive CSS
 - **NO animations, NO complex interactions**
 

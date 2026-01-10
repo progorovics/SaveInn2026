@@ -40,6 +40,11 @@
   - Philosophy: Clean, professional, non-fancy
   - Focus: Functionality over decoration
 
+- **Feature Decisions** (2026-01-10)
+  - NO appointment booking system
+  - Cookie consent popup required (show once, save preference)
+  - Contact via phone/email only (no booking forms)
+
 ## Repository
 - **GitHub**: https://github.com/progorovics/SaveInn2026
 
@@ -72,7 +77,7 @@
 2. **Hero Section**
    - Clear headline
    - Descriptive subtitle
-   - Call-to-action button ("Termin vereinbaren" / Schedule Appointment)
+   - Call-to-action button (Contact/Call, NOT appointment booking)
 
 3. **Services Section**
    - Grid/card layout
