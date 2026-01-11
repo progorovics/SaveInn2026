@@ -1,4 +1,5 @@
 ---
+import { base } from '../config';
 ---
 
 <div id="cookie-consent-popup" class="fixed inset-0 z-[9999] hidden">
@@ -14,8 +15,8 @@
       und verarbeiten Daten für Marketing und Statistiken nur, wenn Sie uns Ihre Einwilligung geben.
       Wenn Sie zu einem späteren Zeitpunkt Ihre Meinung ändern, können Sie die Einwilligung jederzeit
       für die Zukunft widerrufen. Weitere Informationen zum Umfang der Datenverarbeitung finden Sie hier:
-      <a href="/datenschutz" class="text-blue-900 underline hover:text-blue-700 transition-colors">Datenschutzerklärung</a>
-      <a href="/impressum" class="text-blue-900 underline hover:text-blue-700 transition-colors">Impressum</a>
+      <a href={`${base}/datenschutz`} class="text-blue-900 underline hover:text-blue-700 transition-colors">Datenschutzerklärung</a>
+      <a href={`${base}/impressum`} class="text-blue-900 underline hover:text-blue-700 transition-colors">Impressum</a>
     </p>
 
     <div class="mb-8 space-y-6">

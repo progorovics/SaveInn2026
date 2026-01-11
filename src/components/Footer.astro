@@ -1,4 +1,5 @@
 ---
+import { base } from '../config';
 const currentYear = new Date().getFullYear();
 ---
 
@@ -18,17 +19,17 @@ const currentYear = new Date().getFullYear();
         <h3 class="text-xl font-bold mb-4 text-white">Schnellzugriff</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+            <a href={`${base}/`} class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
               Home
             </a>
           </li>
           <li>
-            <a href="/#leistungen" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+            <a href={`${base}/#leistungen`} class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
               Leistungen
             </a>
           </li>
           <li>
-            <a href="/kontakt" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+            <a href={`${base}/kontakt`} class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
               Kontakt
             </a>
           </li>
@@ -75,11 +76,11 @@ const currentYear = new Date().getFullYear();
     <!-- Legal Links & Copyright -->
     <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-4 text-sm">
-        <a href="/impressum" class="text-gray-400 hover:text-blue-400 transition-colors">
+        <a href={`${base}/impressum`} class="text-gray-400 hover:text-blue-400 transition-colors">
           Impressum
         </a>
         <span class="text-gray-600">|</span>
-        <a href="/datenschutz" class="text-gray-400 hover:text-blue-400 transition-colors">
+        <a href={`${base}/datenschutz`} class="text-gray-400 hover:text-blue-400 transition-colors">
           Datenschutz
         </a>
       </div>
