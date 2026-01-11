@@ -1,21 +1,14 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Custom Brand Theme Configuration */
-@theme {
+:root {
   /* Brand Colors from Reifenmeister Logo */
   --color-brand-red: #D32F2F;
   --color-brand-red-dark: #C62828;
   --color-brand-blue: #0D47A1;
   --color-brand-blue-light: #1565C0;
-
-  /* Extend Tailwind's default colors */
-  --color-red-600: var(--color-brand-red);
-  --color-red-700: var(--color-brand-red-dark);
-  --color-blue-900: var(--color-brand-blue);
-  --color-blue-700: var(--color-brand-blue-light);
-
-  /* Container max width */
-  --container-max-width: 1200px;
 }
 
 /* Base Styles */
