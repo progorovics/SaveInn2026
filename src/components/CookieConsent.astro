@@ -1,66 +1,68 @@
 ---
 ---
 
-<div id="cookie-consent-popup" class="cookie-popup">
-  <div class="cookie-overlay"></div>
-  <div class="cookie-modal">
-    <h2 class="cookie-title">Cookie Einstellungen</h2>
+<div id="cookie-consent-popup" class="fixed inset-0 z-[9999] hidden">
+  <div class="absolute inset-0 bg-black/70"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl max-w-2xl w-[90%] max-h-[90vh] overflow-y-auto p-6 lg:p-8 shadow-2xl">
+    <h2 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
+      Cookie Einstellungen
+    </h2>
 
-    <p class="cookie-description">
+    <p class="text-sm lg:text-base text-gray-600 leading-relaxed mb-6">
       Wir nutzen Cookies, um Ihnen die bestmögliche Nutzung unserer Webseite zu ermöglichen
       und unsere Kommunikation mit Ihnen zu verbessern. Wir berücksichtigen hierbei Ihre Präferenzen
       und verarbeiten Daten für Marketing und Statistiken nur, wenn Sie uns Ihre Einwilligung geben.
       Wenn Sie zu einem späteren Zeitpunkt Ihre Meinung ändern, können Sie die Einwilligung jederzeit
       für die Zukunft widerrufen. Weitere Informationen zum Umfang der Datenverarbeitung finden Sie hier:
-      <a href="/datenschutz" class="cookie-link">Datenschutzerklärung</a>
-      <a href="/impressum" class="cookie-link">Impressum</a>
+      <a href="/datenschutz" class="text-blue-900 underline hover:text-blue-700 transition-colors">Datenschutzerklärung</a>
+      <a href="/impressum" class="text-blue-900 underline hover:text-blue-700 transition-colors">Impressum</a>
     </p>
 
-    <div class="cookie-categories">
+    <div class="mb-8 space-y-6">
       <!-- Essential Cookies -->
-      <div class="cookie-category">
-        <label class="cookie-checkbox-label">
+      <div class="pb-4 border-b border-gray-200">
+        <label class="flex items-center gap-3 cursor-pointer mb-2">
           <input
             type="checkbox"
             id="cookie-essentiell"
             checked
             disabled
-            class="cookie-checkbox"
+            class="w-5 h-5 rounded accent-blue-900 cursor-not-allowed"
           />
-          <span class="cookie-category-title">Essentiell</span>
+          <span class="font-bold text-lg text-gray-800">Essentiell</span>
         </label>
-        <p class="cookie-category-description">
+        <p class="text-sm text-gray-600 ml-8 leading-relaxed">
           Diese Technologien sind erforderlich, um die Kernfunktionalität der Webseite zu gewährleisten.
         </p>
       </div>
 
       <!-- Functional Cookies -->
-      <div class="cookie-category">
-        <label class="cookie-checkbox-label">
+      <div class="pb-4 border-b border-gray-200">
+        <label class="flex items-center gap-3 cursor-pointer mb-2">
           <input
             type="checkbox"
             id="cookie-funktional"
-            class="cookie-checkbox"
+            class="w-5 h-5 rounded accent-blue-900 cursor-pointer"
           />
-          <span class="cookie-category-title">Funktional</span>
+          <span class="font-bold text-lg text-gray-800">Funktional</span>
         </label>
-        <p class="cookie-category-description">
+        <p class="text-sm text-gray-600 ml-8 leading-relaxed">
           Diese Technologien bieten die bestmögliche Funktionalität der Webseite. Services von
           Drittanbietern wie Google Maps, Chats, Fahrzeugbewertungssystem und weitere werden aktiviert.
         </p>
       </div>
 
       <!-- Statistics and Marketing -->
-      <div class="cookie-category">
-        <label class="cookie-checkbox-label">
+      <div>
+        <label class="flex items-center gap-3 cursor-pointer mb-2">
           <input
             type="checkbox"
             id="cookie-statistik"
-            class="cookie-checkbox"
+            class="w-5 h-5 rounded accent-blue-900 cursor-pointer"
           />
-          <span class="cookie-category-title">Statistik und Marketing</span>
+          <span class="font-bold text-lg text-gray-800">Statistik und Marketing</span>
         </label>
-        <p class="cookie-category-description">
+        <p class="text-sm text-gray-600 ml-8 leading-relaxed">
           Diese Technologien ermöglichen es uns, die Nutzung der Webseite zu analysieren, um die Leistung
           zu messen und zu verbessern. Zudem werden Technologien eingesetzt, die von dritten Werbetreibenden
           verwendet werden, um Sie auf anderen Webseiten zu verfolgen und um Anzeigen zu schalten, die für
@@ -69,14 +71,23 @@
       </div>
     </div>
 
-    <div class="cookie-buttons">
-      <button id="decline-optional-cookies" class="btn btn-secondary-dark">
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <button
+        id="decline-optional-cookies"
+        class="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors"
+      >
         Optionale Cookies ablehnen
       </button>
-      <button id="save-cookie-selection" class="btn btn-secondary-dark">
+      <button
+        id="save-cookie-selection"
+        class="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors"
+      >
         Auswahl speichern
       </button>
-      <button id="accept-all-cookies" class="btn btn-primary">
+      <button
+        id="accept-all-cookies"
+        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors shadow-lg"
+      >
         Alle akzeptieren
       </button>
     </div>
@@ -89,147 +100,7 @@
 </script>
 
 <style>
-  .cookie-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: none;
-  }
-
-  .cookie-popup.active {
+  #cookie-consent-popup.active {
     display: block;
-  }
-
-  .cookie-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-  .cookie-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color-white);
-    border-radius: var(--radius-lg);
-    max-width: 600px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: var(--spacing-xl);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .cookie-title {
-    font-size: 1.75rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-gray-dark);
-  }
-
-  .cookie-description {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--color-gray-medium);
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .cookie-link {
-    color: var(--color-blue-primary);
-    text-decoration: underline;
-  }
-
-  .cookie-link:hover {
-    color: var(--color-blue-light);
-  }
-
-  .cookie-categories {
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .cookie-category {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--color-gray-lighter);
-  }
-
-  .cookie-category:last-child {
-    border-bottom: none;
-  }
-
-  .cookie-checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    cursor: pointer;
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .cookie-checkbox {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    accent-color: var(--color-blue-primary);
-  }
-
-  .cookie-checkbox:disabled {
-    cursor: not-allowed;
-  }
-
-  .cookie-category-title {
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--color-gray-dark);
-  }
-
-  .cookie-category-description {
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: var(--color-gray-medium);
-    margin-left: 28px;
-    margin-bottom: 0;
-  }
-
-  .cookie-buttons {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .btn-secondary-dark {
-    background-color: var(--color-bg-button-secondary);
-    color: var(--color-white);
-    border: none;
-  }
-
-  .btn-secondary-dark:hover {
-    background-color: var(--color-gray-dark);
-    text-decoration: none;
-  }
-
-  @media (max-width: 768px) {
-    .cookie-modal {
-      padding: var(--spacing-lg);
-      max-height: 95vh;
-    }
-
-    .cookie-title {
-      font-size: 1.5rem;
-    }
-
-    .cookie-buttons {
-      flex-direction: column;
-    }
-
-    .cookie-buttons .btn {
-      width: 100%;
-    }
   }
 </style>

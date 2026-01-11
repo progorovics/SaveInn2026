@@ -1,140 +1,80 @@
 ---
 ---
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="brand-name">SAVE INN</span> - Ihre Werkstatt in Hamburg
+<section class="relative min-h-[600px] flex items-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-white/80 z-10"></div>
+    <img
+      src="/hero-background.webp"
+      alt="SAVE INN Workshop Background"
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Main Heading -->
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-red-600 mb-4 drop-shadow-sm">
+        SAVE INN
       </h1>
-      <p class="hero-subtitle">
-        Professionelle Autoreparatur & Service seit vielen Jahren
+
+      <!-- Subtitle -->
+      <p class="text-2xl sm:text-3xl lg:text-4xl text-gray-800 mb-3 font-bold drop-shadow-sm">
+        Tradition, die man spürt
       </p>
-      <p class="hero-features">
-        <span class="feature">✓ Top-Service</span>
-        <span class="feature">✓ Inspektion</span>
-        <span class="feature">✓ Ölwechsel</span>
-        <span class="feature">✓ Reparaturen</span>
-        <span class="feature">✓ Reifenwechsel</span>
+
+      <!-- Secondary Subtitle -->
+      <p class="text-lg sm:text-xl text-gray-700 mb-8 font-medium drop-shadow-sm">
+        Mit Herz und Verstand seit mehr als zwei Jahrzehnten Ihr Partner fürs Auto in Hamburg-Harburg
       </p>
-      <div class="hero-cta">
-        <a href="tel:040773192" class="btn btn-primary btn-large">
-          📞 Jetzt anrufen
+
+      <!-- Features -->
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10 text-base sm:text-lg">
+        <span class="font-semibold text-gray-800 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+          ✓ Top-Service
+        </span>
+        <span class="font-semibold text-gray-800 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+          ✓ Inspektion
+        </span>
+        <span class="font-semibold text-gray-800 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+          ✓ Ölwechsel
+        </span>
+        <span class="font-semibold text-gray-800 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+          ✓ Reparaturen
+        </span>
+        <span class="font-semibold text-gray-800 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+          ✓ TÜV & HU
+        </span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="tel:040773192"
+          class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-lg inline-flex items-center justify-center gap-2"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+          </svg>
+          <span>Jetzt anrufen</span>
         </a>
-        <a href="#leistungen" class="btn btn-secondary btn-large">
+        <a
+          href="#leistungen"
+          class="w-full sm:w-auto bg-white hover:bg-gray-50 text-blue-900 font-bold px-8 py-4 rounded-lg border-2 border-blue-900 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-lg"
+        >
           Leistungen ansehen
         </a>
       </div>
     </div>
   </div>
+
+  <!-- Decorative bottom wave (optional modern touch) -->
+  <div class="absolute bottom-0 left-0 right-0 z-10">
+    <svg viewBox="0 0 1440 120" class="w-full h-12 sm:h-16 fill-white">
+      <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+    </svg>
+  </div>
 </section>
-
-<style>
-  .hero {
-    background-image:
-      linear-gradient(
-        rgba(255, 255, 255, 0.80),
-        rgba(255, 255, 255, 0.80)
-      ),
-      url('/hero-background.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: var(--spacing-xxl) 0;
-    position: relative;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-  }
-
-  /* Fallback if image doesn't exist */
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--color-gray-lightest) 0%, var(--color-white) 100%);
-    z-index: -1;
-  }
-
-  .hero-content {
-    max-width: 800px;
-    text-align: center;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-gray-dark);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
-  }
-
-  .brand-name {
-    color: var(--color-red-primary);
-    font-weight: 800;
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--color-gray-dark);
-    margin-bottom: var(--spacing-lg);
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-  }
-
-  .hero-features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    font-size: 1rem;
-    color: var(--color-gray-dark);
-  }
-
-  .feature {
-    font-weight: 600;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero {
-      padding: var(--spacing-xl) 0;
-    }
-
-    .hero-title {
-      font-size: 2rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.125rem;
-    }
-
-    .hero-features {
-      flex-direction: column;
-      align-items: center;
-      gap: var(--spacing-xs);
-    }
-
-    .hero-cta {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .btn-large {
-      width: 100%;
-      max-width: 300px;
-    }
-  }
-</style>

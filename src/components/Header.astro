@@ -2,229 +2,145 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="header">
-  <div class="container">
-    <nav class="nav">
+<header class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between py-3 gap-6">
       <!-- Logo -->
-      <a href="/" class="logo-link">
-        <img src="/logo.png" alt="SAVE INN - Reifenmeister" class="logo" />
+      <a href="/" class="flex items-center hover:opacity-90 transition-opacity">
+        <img src="/logo.png" alt="SAVE INN - Reifenmeister" class="h-12 sm:h-14 w-auto" />
       </a>
 
       <!-- Desktop Navigation -->
-      <ul class="nav-menu">
-        <li><a href="/" class:list={["nav-link", { active: currentPath === "/" }]}>Home</a></li>
-        <li><a href="/#leistungen" class="nav-link">Leistungen</a></li>
-        <li><a href="/kontakt" class:list={["nav-link", { active: currentPath === "/kontakt" }]}>Kontakt</a></li>
+      <ul class="hidden md:flex items-center gap-8">
+        <li>
+          <a
+            href="/"
+            class={`font-semibold text-gray-700 hover:text-blue-900 transition-colors pb-1 border-b-2 ${currentPath === "/" ? "border-blue-900 text-blue-900" : "border-transparent"}`}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#leistungen"
+            class="font-semibold text-gray-700 hover:text-blue-900 transition-colors pb-1 border-b-2 border-transparent"
+          >
+            Leistungen
+          </a>
+        </li>
+        <li>
+          <a
+            href="/kontakt"
+            class={`font-semibold text-gray-700 hover:text-blue-900 transition-colors pb-1 border-b-2 ${currentPath === "/kontakt" ? "border-blue-900 text-blue-900" : "border-transparent"}`}
+          >
+            Kontakt
+          </a>
+        </li>
       </ul>
 
-      <!-- Contact Button -->
-      <a href="tel:040773192" class="btn btn-primary header-cta">
-        <span class="cta-icon">📞</span>
-        <span class="cta-text">040-773192</span>
+      <!-- Contact Button - Desktop -->
+      <a
+        href="tel:040773192"
+        class="hidden md:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+        </svg>
+        <span class="whitespace-nowrap">040-773192</span>
       </a>
 
       <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" aria-label="Menu öffnen" aria-expanded="false">
-        <span class="hamburger"></span>
+      <button
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        aria-label="Menu öffnen"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <div class="w-6 h-5 flex flex-col justify-between">
+          <span class="w-full h-0.5 bg-blue-900 transition-all duration-300 origin-center"></span>
+          <span class="w-full h-0.5 bg-blue-900 transition-all duration-300"></span>
+          <span class="w-full h-0.5 bg-blue-900 transition-all duration-300 origin-center"></span>
+        </div>
       </button>
     </nav>
 
     <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-      <ul class="mobile-nav-menu">
-        <li><a href="/" class="mobile-nav-link">Home</a></li>
-        <li><a href="/#leistungen" class="mobile-nav-link">Leistungen</a></li>
-        <li><a href="/kontakt" class="mobile-nav-link">Kontakt</a></li>
-        <li><a href="tel:040773192" class="mobile-nav-link mobile-phone">📞 040-773192</a></li>
+    <div class="md:hidden hidden border-t border-gray-100" id="mobile-nav">
+      <ul class="py-4 space-y-1">
+        <li>
+          <a
+            href="/"
+            class="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-50 hover:text-blue-900 transition-colors rounded-lg mobile-nav-link"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#leistungen"
+            class="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-50 hover:text-blue-900 transition-colors rounded-lg mobile-nav-link"
+          >
+            Leistungen
+          </a>
+        </li>
+        <li>
+          <a
+            href="/kontakt"
+            class="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-50 hover:text-blue-900 transition-colors rounded-lg mobile-nav-link"
+          >
+            Kontakt
+          </a>
+        </li>
+        <li class="pt-2">
+          <a
+            href="tel:040773192"
+            class="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-3 rounded-lg transition-colors mx-4 mobile-nav-link"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+            <span>040-773192</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
 </header>
 
-<style>
-  .header {
-    background-color: var(--color-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--spacing-sm) 0;
-    gap: var(--spacing-lg);
-  }
-
-  .logo-link {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo {
-    height: 50px;
-    width: auto;
-  }
-
-  .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: var(--spacing-lg);
-    margin: 0;
-  }
-
-  .nav-link {
-    font-weight: 600;
-    color: var(--color-gray-dark);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-    padding: var(--spacing-xs) 0;
-    border-bottom: 2px solid transparent;
-  }
-
-  .nav-link:hover,
-  .nav-link.active {
-    color: var(--color-blue-primary);
-    text-decoration: none;
-    border-bottom-color: var(--color-blue-primary);
-  }
-
-  .header-cta {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    white-space: nowrap;
-  }
-
-  .cta-icon {
-    font-size: 1.2rem;
-  }
-
-  /* Mobile Menu */
-  .mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--spacing-xs);
-  }
-
-  .hamburger {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: var(--color-blue-primary);
-    position: relative;
-    transition: background-color var(--transition-fast);
-  }
-
-  .hamburger::before,
-  .hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 2px;
-    background-color: var(--color-blue-primary);
-    transition: all var(--transition-fast);
-  }
-
-  .hamburger::before {
-    top: -8px;
-  }
-
-  .hamburger::after {
-    top: 8px;
-  }
-
-  .mobile-nav {
-    display: none;
-    background-color: var(--color-white);
-    border-top: 1px solid var(--color-gray-lighter);
-  }
-
-  .mobile-nav.active {
-    display: block;
-  }
-
-  .mobile-nav-menu {
-    list-style: none;
-    padding: var(--spacing-md) 0;
-  }
-
-  .mobile-nav-link {
-    display: block;
-    padding: var(--spacing-md);
-    color: var(--color-gray-dark);
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color var(--transition-fast), color var(--transition-fast);
-  }
-
-  .mobile-nav-link:hover {
-    background-color: var(--color-gray-lightest);
-    color: var(--color-blue-primary);
-    text-decoration: none;
-  }
-
-  .mobile-phone {
-    background-color: var(--color-red-primary);
-    color: var(--color-white);
-    text-align: center;
-    border-radius: var(--radius-sm);
-  }
-
-  .mobile-phone:hover {
-    background-color: var(--color-red-dark);
-    color: var(--color-white);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .nav-menu,
-    .header-cta {
-      display: none;
-    }
-
-    .mobile-menu-toggle {
-      display: block;
-    }
-
-    .logo {
-      height: 40px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .cta-text {
-      display: none;
-    }
-
-    .cta-icon {
-      font-size: 1.5rem;
-    }
-  }
-</style>
-
 <script>
   // Mobile menu toggle
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileNav = document.querySelector('.mobile-nav');
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
 
   if (menuToggle && mobileNav) {
     menuToggle.addEventListener('click', () => {
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-      mobileNav.classList.toggle('active');
+      mobileNav.classList.toggle('hidden');
+
+      // Animate hamburger icon
+      const spans = menuToggle.querySelectorAll('span');
+      if (!isExpanded) {
+        spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
     });
 
     // Close mobile menu when clicking a link
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-        menuToggle?.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
       });
     });
   }

@@ -45,13 +45,18 @@ const services = [
 ];
 ---
 
-<section id="leistungen" class="services">
-  <div class="container">
-    <h2 class="services-title text-center">Unsere Serviceleistungen im Überblick</h2>
-    <p class="services-subtitle text-center">
-      Professionelle Werkstattleistungen für alle Fahrzeugmarken
-    </p>
-    <div class="services-grid">
+<section id="leistungen" class="py-16 lg:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+        Unsere Serviceleistungen im Überblick
+      </h2>
+      <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+        Professionelle Werkstattleistungen für alle Fahrzeugmarken
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       {services.map(service => (
         <ServiceCard
           icon={service.icon}
@@ -62,43 +67,3 @@ const services = [
     </div>
   </div>
 </section>
-
-<style>
-  .services {
-    padding: var(--spacing-xxl) 0;
-    background-color: var(--color-white);
-  }
-
-  .services-title {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .services-subtitle {
-    font-size: 1.125rem;
-    color: var(--color-gray-medium);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-  }
-
-  @media (max-width: 768px) {
-    .services {
-      padding: var(--spacing-xl) 0;
-    }
-
-    .services-title {
-      font-size: 2rem;
-    }
-
-    .services-grid {
-      grid-template-columns: 1fr;
-      gap: var(--spacing-md);
-    }
-  }
-</style>

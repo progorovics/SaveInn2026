@@ -11,75 +11,115 @@ import CookieConsent from '../components/CookieConsent.astro';
 >
   <Header />
   <main>
-    <section class="kontakt-hero">
-      <div class="container">
-        <h1>Kontakt</h1>
-        <p class="lead">Wir sind für Sie da - kontaktieren Sie uns</p>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-gray-100 to-white py-16 lg:py-20 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">Kontakt</h1>
+        <p class="text-xl text-gray-600">Wir sind für Sie da - kontaktieren Sie uns</p>
       </div>
     </section>
 
-    <section class="kontakt-content">
-      <div class="container">
-        <div class="kontakt-grid">
+    <!-- Contact Content -->
+    <section class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <!-- Contact Information -->
-          <div class="kontakt-info">
-            <h2>SAVE INN</h2>
-            <p class="mb-lg"><strong>Inhaber: Felix Koch</strong></p>
+          <div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-red-600 mb-2">SAVE INN</h2>
+            <p class="text-lg font-semibold text-gray-700 mb-8">Inhaber: Felix Koch</p>
 
-            <div class="info-section">
-              <h3>📍 Adresse</h3>
-              <p>
+            <!-- Address -->
+            <div class="mb-8">
+              <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Adresse
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
                 Küchgarten 21<br />
                 21073 Hamburg
               </p>
             </div>
 
-            <div class="info-section">
-              <h3>📞 Telefon & E-Mail</h3>
-              <p>
-                <strong>Telefon:</strong> <a href="tel:040773192">040-773192</a><br />
+            <!-- Phone & Email -->
+            <div class="mb-8">
+              <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                Telefon & E-Mail
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                <strong>Telefon:</strong> <a href="tel:040773192" class="text-blue-900 hover:text-blue-700 font-semibold transition-colors">040-773192</a><br />
                 <strong>Fax:</strong> 040-7659918<br />
-                <strong>E-Mail:</strong> <a href="mailto:info@save-inn.de">info@save-inn.de</a>
+                <strong>E-Mail:</strong> <a href="mailto:info@save-inn.de" class="text-blue-900 hover:text-blue-700 font-semibold transition-colors">info@save-inn.de</a>
               </p>
             </div>
 
-            <div class="info-section">
-              <h3>🕐 Öffnungszeiten</h3>
-              <p>
-                <strong>Montag - Freitag:</strong><br />
-                08:00 - 18:00 Uhr
-              </p>
-              <p class="mt-sm">
-                <strong>Hauptuntersuchung (HU):</strong><br />
-                Mittwoch & Donnerstag<br />
-                nach Terminvereinbarung
-              </p>
+            <!-- Opening Hours -->
+            <div class="mb-10">
+              <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                Öffnungszeiten
+              </h3>
+              <div class="text-gray-600 leading-relaxed">
+                <p class="mb-2">
+                  <strong class="text-gray-800">Montag - Freitag:</strong><br />
+                  08:00 - 18:00 Uhr
+                </p>
+                <p>
+                  <strong class="text-gray-800">Hauptuntersuchung (HU):</strong><br />
+                  Mittwoch & Donnerstag<br />
+                  nach Terminvereinbarung
+                </p>
+              </div>
             </div>
 
-            <div class="cta-buttons">
-              <a href="tel:040773192" class="btn btn-primary btn-large">
-                📞 Jetzt anrufen
+            <!-- CTA Buttons -->
+            <div class="flex flex-col gap-4">
+              <a
+                href="tel:040773192"
+                class="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-lg"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                <span>Jetzt anrufen</span>
               </a>
-              <a href="mailto:info@save-inn.de" class="btn btn-secondary btn-large">
-                ✉️ E-Mail schreiben
+              <a
+                href="mailto:info@save-inn.de"
+                class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-blue-900 font-bold px-8 py-4 rounded-lg border-2 border-blue-900 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-lg"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <span>E-Mail schreiben</span>
               </a>
             </div>
           </div>
 
-          <!-- Map Placeholder -->
-          <div class="kontakt-map">
-            <div class="map-placeholder">
-              <p class="map-text">
-                <strong>Küchgarten 21, 21073 Hamburg</strong><br />
+          <!-- Map Section -->
+          <div class="lg:sticky lg:top-24">
+            <div class="bg-gray-50 border-2 border-gray-200 rounded-2xl p-12 lg:p-16 text-center min-h-[400px] flex items-center justify-center shadow-lg">
+              <div>
+                <p class="text-lg text-gray-700 mb-6">
+                  <strong class="text-xl text-gray-800">Küchgarten 21, 21073 Hamburg</strong>
+                </p>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Küchgarten+21,+21073+Hamburg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="map-link"
+                  class="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
                 >
-                  📍 In Google Maps öffnen
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  <span>In Google Maps öffnen</span>
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -89,123 +129,3 @@ import CookieConsent from '../components/CookieConsent.astro';
   <Footer />
   <CookieConsent />
 </Layout>
-
-<style>
-  .kontakt-hero {
-    background: linear-gradient(135deg, var(--color-gray-lightest) 0%, var(--color-white) 100%);
-    padding: var(--spacing-xxl) 0 var(--spacing-xl);
-    text-align: center;
-  }
-
-  .kontakt-hero h1 {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .lead {
-    font-size: 1.25rem;
-    color: var(--color-gray-medium);
-  }
-
-  .kontakt-content {
-    padding: var(--spacing-xxl) 0;
-  }
-
-  .kontakt-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xxl);
-    align-items: start;
-  }
-
-  .kontakt-info h2 {
-    color: var(--color-red-primary);
-    font-size: 2rem;
-    margin-bottom: var(--spacing-xs);
-  }
-
-  .info-section {
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .info-section h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-gray-dark);
-  }
-
-  .info-section p {
-    line-height: 1.8;
-    color: var(--color-gray-medium);
-  }
-
-  .info-section a {
-    color: var(--color-blue-primary);
-    font-weight: 600;
-  }
-
-  .cta-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-xl);
-  }
-
-  .kontakt-map {
-    position: sticky;
-    top: 100px;
-  }
-
-  .map-placeholder {
-    background-color: var(--color-gray-lightest);
-    border: 2px solid var(--color-gray-lighter);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-xxl);
-    text-align: center;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .map-text {
-    font-size: 1.125rem;
-    color: var(--color-gray-dark);
-  }
-
-  .map-link {
-    display: inline-block;
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: var(--color-blue-primary);
-    color: var(--color-white);
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    transition: background-color var(--transition-normal);
-  }
-
-  .map-link:hover {
-    background-color: var(--color-blue-light);
-    text-decoration: none;
-  }
-
-  @media (max-width: 768px) {
-    .kontakt-hero h1 {
-      font-size: 2rem;
-    }
-
-    .kontakt-grid {
-      grid-template-columns: 1fr;
-      gap: var(--spacing-xl);
-    }
-
-    .kontakt-map {
-      position: static;
-    }
-
-    .map-placeholder {
-      min-height: 300px;
-    }
-  }
-</style>

@@ -2,204 +2,90 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
       <!-- About Column -->
-      <div class="footer-column">
-        <h3 class="footer-title">SAVE INN</h3>
-        <p class="footer-text">
-          Ihre zuverlässige Werkstatt in Hamburg-Harburg seit vielen Jahren.
-          Professioneller Service für alle Fahrzeugmarken.
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">SAVE INN</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Tradition, die man spürt. Mit Herz und Verstand seit mehr als zwei Jahrzehnten Ihr Partner fürs Auto in Hamburg-Harburg.
         </p>
       </div>
 
       <!-- Quick Links Column -->
-      <div class="footer-column">
-        <h3 class="footer-title">Schnellzugriff</h3>
-        <ul class="footer-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/#leistungen">Leistungen</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">Schnellzugriff</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="/" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/#leistungen" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+              Leistungen
+            </a>
+          </li>
+          <li>
+            <a href="/kontakt" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+              Kontakt
+            </a>
+          </li>
         </ul>
       </div>
 
       <!-- Contact Column -->
-      <div class="footer-column">
-        <h3 class="footer-title">Kontakt</h3>
-        <address class="footer-address">
-          <p>SAVE INN</p>
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">Kontakt</h3>
+        <address class="not-italic text-gray-300 text-sm leading-relaxed space-y-1">
+          <p class="font-semibold text-white">SAVE INN</p>
           <p>Küchgarten 21</p>
           <p>21073 Hamburg</p>
-          <p><a href="tel:040773192">Tel: 040-773192</a></p>
-          <p><a href="mailto:info@save-inn.de">E-Mail: info@save-inn.de</a></p>
+          <p class="pt-2">
+            <a href="tel:040773192" class="hover:text-blue-400 transition-colors">
+              Tel: 040-773192
+            </a>
+          </p>
+          <p>
+            <a href="mailto:info@save-inn.de" class="hover:text-blue-400 transition-colors break-all">
+              E-Mail: info@save-inn.de
+            </a>
+          </p>
         </address>
       </div>
 
       <!-- Opening Hours Column -->
-      <div class="footer-column">
-        <h3 class="footer-title">Öffnungszeiten</h3>
-        <div class="footer-hours">
-          <p><strong>Montag - Freitag</strong></p>
-          <p>08:00 - 18:00 Uhr</p>
-          <p class="mt-sm"><strong>HU (Hauptuntersuchung)</strong></p>
-          <p>Mittwoch & Donnerstag</p>
-          <p>nach Terminvereinbarung</p>
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">Öffnungszeiten</h3>
+        <div class="text-gray-300 text-sm leading-relaxed space-y-2">
+          <div>
+            <p class="font-semibold text-white">Montag - Freitag</p>
+            <p>08:00 - 18:00 Uhr</p>
+          </div>
+          <div class="pt-2">
+            <p class="font-semibold text-white">HU (Hauptuntersuchung)</p>
+            <p>Mittwoch & Donnerstag</p>
+            <p>nach Terminvereinbarung</p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Legal Links & Copyright -->
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <a href="/impressum">Impressum</a>
-        <span class="separator">|</span>
-        <a href="/datenschutz">Datenschutz</a>
+    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-4 text-sm">
+        <a href="/impressum" class="text-gray-400 hover:text-blue-400 transition-colors">
+          Impressum
+        </a>
+        <span class="text-gray-600">|</span>
+        <a href="/datenschutz" class="text-gray-400 hover:text-blue-400 transition-colors">
+          Datenschutz
+        </a>
       </div>
-      <p class="footer-copyright">
+      <p class="text-gray-500 text-sm">
         © {currentYear} SAVE INN. Alle Rechte vorbehalten.
       </p>
     </div>
   </div>
 </footer>
-
-<style>
-  .footer {
-    background-color: var(--color-bg-dark);
-    color: var(--color-white);
-    padding: var(--spacing-xxl) 0 var(--spacing-lg);
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .footer-column {
-    min-width: 0;
-  }
-
-  .footer-title {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-white);
-  }
-
-  .footer-text {
-    color: var(--color-gray-light);
-    line-height: 1.6;
-    font-size: 0.9375rem;
-  }
-
-  .footer-links {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-links li {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .footer-links a {
-    color: var(--color-gray-light);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-  }
-
-  .footer-links a:hover {
-    color: var(--color-blue-light);
-    text-decoration: none;
-  }
-
-  .footer-address {
-    font-style: normal;
-    color: var(--color-gray-light);
-    line-height: 1.8;
-    font-size: 0.9375rem;
-  }
-
-  .footer-address p {
-    margin-bottom: 0.25rem;
-  }
-
-  .footer-address a {
-    color: var(--color-gray-light);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-  }
-
-  .footer-address a:hover {
-    color: var(--color-blue-light);
-    text-decoration: underline;
-  }
-
-  .footer-hours {
-    color: var(--color-gray-light);
-    line-height: 1.6;
-    font-size: 0.9375rem;
-  }
-
-  .footer-hours p {
-    margin-bottom: 0.25rem;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid var(--color-bg-medium);
-    padding-top: var(--spacing-lg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-  }
-
-  .footer-legal {
-    display: flex;
-    gap: var(--spacing-md);
-    align-items: center;
-  }
-
-  .footer-legal a {
-    color: var(--color-gray-light);
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: color var(--transition-fast);
-  }
-
-  .footer-legal a:hover {
-    color: var(--color-blue-light);
-    text-decoration: underline;
-  }
-
-  .separator {
-    color: var(--color-gray-medium);
-  }
-
-  .footer-copyright {
-    color: var(--color-gray-medium);
-    font-size: 0.875rem;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .footer {
-      padding: var(--spacing-xl) 0 var(--spacing-md);
-    }
-
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: var(--spacing-lg);
-    }
-
-    .footer-bottom {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .footer-legal {
-      justify-content: center;
-    }
-  }
-</style>
