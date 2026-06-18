@@ -51,6 +51,27 @@ npm run preview
 - Fast loading times
 - GitHub Pages deployment with automated workflows
 
+## Icons
+
+### Service Cards (`ServicesGrid.astro`)
+Die Service Cards verwenden **Emojis** als Icons — keine externe Icon-Library nötig.
+
+| Emoji | Service |
+|-------|---------|
+| 🔧 | Achsvermessung |
+| 🔍 | Fahrzeugdiagnose |
+| ✅ | Inspektion |
+| ❄️ | Klimaservice |
+| 🛞 | Reifenservice |
+| 🚗 | Unfallservice |
+| 🚚 | Anhängerreparatur |
+| 📋 | AU & HU |
+
+Um einen Service hinzuzufügen, einfach ein neues Objekt mit `icon`, `title` und `description` in das `services`-Array in `ServicesGrid.astro` eintragen.
+
+### UI-Icons (Header, Hero, Kontakt, CTASection)
+Inline-SVGs im Material Design Stil (`viewBox="0 0 24 24"`, `currentColor`, Tailwind `w-5 h-5` / `w-6 h-6`). Keine externe Library.
+
 ## Development Notes
 - Base path configured for GitHub Pages (`/SaveInn2026/`)
 - Tailwind CSS v3 for styling
